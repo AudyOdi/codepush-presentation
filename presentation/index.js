@@ -59,6 +59,7 @@ const images = {
   updateLoadingIndicator: require('../assets/update-loading-indicator.png'),
   example1: require('../assets/example-1.gif'),
   example2: require('../assets/example-2.gif'),
+  whoUseCodePush: require('../assets/who-use-codepush.png'),
 };
 
 preloader(images);
@@ -112,7 +113,7 @@ export default class Presentation extends React.Component {
                   <List>
                     <ListItem textSize={30}>Audy Tanudjaja</ListItem>
                     <ListItem textSize={30}>
-                      Cross-platform Mobile Engineer
+                      Software Engineer
                       <Image
                         src={images.kodefoxLogo}
                         height="100px"
@@ -120,7 +121,7 @@ export default class Presentation extends React.Component {
                       />
                     </ListItem>
                     <ListItem textSize={30}>
-                      React Native Enthusiast!
+                      React and React Native Enthusiast!
                     </ListItem>
                     <ListItem textSize={30}>
                       contact:
@@ -246,7 +247,11 @@ export default class Presentation extends React.Component {
           <Image src={images.whatIfMeme} height="350px" />
         </Slide>
 
-        <Slide id="secondQuestion" transition={['zoom']} bgColor="secondary">
+        <Slide
+          id="thirdQuestionExample"
+          transition={['zoom']}
+          bgColor="secondary"
+        >
           <Heading size={4} caps textColor="primary" textFont="primary">
             Example
           </Heading>
@@ -398,18 +403,84 @@ export default class Presentation extends React.Component {
             </Table>
           </Layout>
         </Slide>
+        <Slide
+          id="oldWay"
+          transition={['fade']}
+          bgColor="secondary"
+        >
+          <Heading size={4} caps lineHeight={1.5} textColor="primary">
+            The Common Way
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+              <Image src={images.codeIcon} height="100px" />
+              <Image src={images.rightArrowIcon} height="50px" />
+              <Image src={images.androidAppleIcon} height="100px" />
+              <Image src={images.rightArrowIcon} height="50px" />
+              <Image
+                src={images.uploadIcon}
+                height="100px"
+                style={{marginLeft: 10, marginRight: 20}}
+              />
+              <Image src={images.rightArrowIcon} height="50px" />
+              <Image src={images.reviewIcon} height="100px" />
+              <Image src={images.rightArrowIcon} height="50px" />
+              <Image src={images.endUserIcon} height="100px" />
+          </div>
+        </Slide>
+        <Slide
+          id="newWay"
+          transition={['fade']}
+          bgColor="secondary"
+        >
+          <Heading size={4} caps lineHeight={1.5} textColor="primary">
+            The Code-Push Way
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+              <Image src={images.codeIcon} height="100px" />
+              <Image src={images.rightArrowIcon} height="50px" />
+              <Image src={images.endUserIcon} height="100px" />
+          </div>
+        </Slide>
+        <Slide id="whoUseCodePush" transition={['zoom']} bgColor="secondary">
+          <Heading size={4} caps textColor="primary" textFont="primary">
+            Who use CodePush?
+          </Heading>
+          <Image src={images.whoUseCodePush} height="400px" />
+        </Slide>
         <Slide id="downSide" transition={['zoom']} bgColor="secondary">
           <Heading size={3} textColor="primary">
             The Downside
           </Heading>
           <List>
-            <ListItem textColor="black">No native code involved</ListItem>
+            <Appear>
+              <ListItem textColor="black">
+                Cannot code-push native code
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textColor="black">No update dialog in iOS</ListItem>
+            </Appear>
           </List>
         </Slide>
         <Slide id="lastSlide" transition={['zoom']} bgColor="primary">
           <Heading size={1} textColor="secondary">
             Thank You!
           </Heading>
+          <Text textSize="20px" margin="120px 0px 0px" textColor="white">
+            This presentation was made with Spectacle by Formidable Labs
+          </Text>
         </Slide>
       </Deck>
     );
